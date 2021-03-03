@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-test
+  labels:
+    app: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+      - name: my-test
+        image: nitesh99sharma/test:latest
+        ports:
+        - containerPort: 81
+        imagePullPolicy: Always
