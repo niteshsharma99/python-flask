@@ -48,10 +48,8 @@ pipeline {
         sh '''
             ibmcloud ks cluster config --cluster ${IKS_CLUSTER}
             kubectl config current-context
-            kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
             kubectl apply -f deployment.yml
             kubectl apply -f service.yml
-            kubectl apply -f metallb-config.yaml
             '''
       }
     }
