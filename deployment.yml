@@ -18,5 +18,5 @@ spec:
       - name: my-test
         image: nitesh99sharma/test:latest
         ports:
-        - containerPort: 81
+        - containerPort: 5000
         imagePullPolicy: Always
