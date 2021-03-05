@@ -1,15 +1,14 @@
-apiVersion: extensions/v1beta1
 kind: Ingress
+apiVersion: extensions/v1beta1
 metadata:
   name: ingress-resource
-  annotations:
-    kubernetes.io/ingress.class: traefik
+  namespace: kube-system
 spec:
   rules:
-  - host: myapp.com
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: my-test
-          servicePort: 5000
+    - host: myapp.com
+      http:
+        paths:
+          - path:
+            backend:
+              serviceName: my-test
+              servicePort: 5000
