@@ -1,15 +1,15 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: myapp-flask-ingress
+  name: ingress-resource
   annotations:
-    kubernetes.io/ingress.class: "traefik"
+    kubernetes.io/ingress.class: traefik
 spec:
   rules:
-    - host: myapp.com
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: my-test
-                servicePort: 5000
+  - host: myapp.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: my-test
+          servicePort: 5000
