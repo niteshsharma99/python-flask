@@ -1,14 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
-apiVersion: extensions/v1beta1
 metadata:
-  name: ingress-resource
-  namespace: kube-system
+  name: ingress-rules
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: myapp.com
-      http:
-        paths:
-          - path:
-            backend:
-              serviceName: my-test
-              servicePort: 5000
+  - host: myapp.com
+    http:
+      paths:
+      - backend:
+          serviceName: my-test
+          servicePort: 5000

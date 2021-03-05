@@ -50,8 +50,7 @@ pipeline {
             kubectl config current-context
             kubectl apply -f deployment.yml
             kubectl apply -f service.yml
-            kubectl apply -f traefik-rbac.yaml
-            kubectl apply -f  traefik-deployment.yaml
+            kubectl apply -f deploy.yaml
             kubectl apply -f ingress.yml
           '''
        }

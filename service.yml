@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: my-test
 spec:
+  type: LoadBalancer
   ports:
   - port: 5000
     targetPort: 5000
+    nodePort: 32165
   selector:
     app: test
