@@ -48,9 +48,9 @@ pipeline {
         sh '''
             ibmcloud ks cluster config --cluster ${IKS_CLUSTER}
             kubectl config current-context
+            kubectl apply -f deploy.yaml
             kubectl apply -f deployment.yml
             kubectl apply -f service.yml
-            kubectl apply -f deploy.yaml
             kubectl apply -f ingress.yml
           '''
        }
