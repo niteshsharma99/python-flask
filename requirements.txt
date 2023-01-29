@@ -1,1 +1,2 @@
 Flask==0.12
+MarkupSafe==2.0.0
